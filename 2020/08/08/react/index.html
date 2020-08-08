@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="readme, Hexo">
+    <meta name="keywords" content="react, Hexo">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>readme | Hexo</title>
+    <title>react | Hexo</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -308,12 +308,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/18.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/23.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">readme</h1>
+                    <h1 class="description center-align post-title">react</h1>
                 </div>
             </div>
         </div>
@@ -442,7 +442,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>Publish Date:&nbsp;&nbsp;
-                    2020-07-04
+                    2020-08-08
                 </div>
                 
 
@@ -458,28 +458,7 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="buffer-的那些事"><a href="#buffer-的那些事" class="headerlink" title="buffer 的那些事"></a>buffer 的那些事</h2><h3 id="为什么-buffer-会产生？"><a href="#为什么-buffer-会产生？" class="headerlink" title="为什么 buffer 会产生？"></a>为什么 buffer 会产生？</h3><p>  由于应用场景不同，再 Node 中，应用需要处理网络协议，操作数据库，处理图片，接受上传文件等，再网络流和文件的操作中，还要处理大量二进制数据，JavaScript 自有的字符串远远不能满足这些需求，于是 Buffer 对象应运而生。</p>
-<h3 id="Buffer-结构"><a href="#Buffer-结构" class="headerlink" title="Buffer 结构"></a>Buffer 结构</h3><p>  类似 Array 对象，主要操作字节。 从两方面认识模块结构和对象层面</p>
-<h3 id="模块结构-不理解"><a href="#模块结构-不理解" class="headerlink" title="模块结构(不理解)"></a>模块结构(不理解)</h3><p>  Node 在进程启动时就已经加载，无需使用 require()即可使用</p>
-<h3 id="Buffer-对象"><a href="#Buffer-对象" class="headerlink" title="Buffer 对象"></a>Buffer 对象</h3><p>  类似数组,得到 16 进制两位数,即 0-255<br>  <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> str = <span class="string">"学习node.js"</span>;</span><br><span class="line"><span class="keyword">var</span> buf = <span class="keyword">new</span> Buffer(str, <span class="string">"utf-8"</span>);</span><br><span class="line"><span class="built_in">console</span>.log(buf);</span><br><span class="line"><span class="comment">// =&gt; &lt;Buffer e5 ad a6 e4 b9 a0 6e 6f 64 65 2e 6a 73&gt;</span></span><br></pre></td></tr></table></figure><br>  Buffer 有 length 属性,可通过下标访问元素<br>  <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> buf = <span class="keyword">new</span> Buffer(<span class="number">100</span>);</span><br><span class="line"><span class="built_in">console</span>.log(buf.length); <span class="comment">// =&gt; 100</span></span><br></pre></td></tr></table></figure><br>  可以通过下标赋值<br>  <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">buf[<span class="number">10</span>] = <span class="number">100</span>;</span><br><span class="line"><span class="built_in">console</span>.log(buf[<span class="number">10</span>]); <span class="comment">//=&gt;100</span></span><br></pre></td></tr></table></figure><br>  值得注意的是,如果给的值不在 0-255 之间<br>  <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">buf[<span class="number">20</span>] = <span class="number">-100</span>;</span><br><span class="line"><span class="built_in">console</span>.log(buf[<span class="number">20</span>]); <span class="comment">// 156</span></span><br><span class="line">buf[<span class="number">21</span>] = <span class="number">300</span>;</span><br><span class="line"><span class="built_in">console</span>.log(buf[<span class="number">21</span>]); <span class="comment">// 44</span></span><br><span class="line">buf[<span class="number">22</span>] = <span class="number">3.1415</span>;</span><br><span class="line"><span class="built_in">console</span>.log(buf[<span class="number">22</span>]); <span class="comment">// 3</span></span><br></pre></td></tr></table></figure><br>  规则是如果给的值小于 0,给该值逐次加 256,直到在 0-255 之间,同理,如果大于 255,逐次减 256,如果小数,舍弃小数</p>
-<h3 id="Buffer-内存分配"><a href="#Buffer-内存分配" class="headerlink" title="Buffer 内存分配"></a>Buffer 内存分配</h3><p>  Node 采用 slab 分配机制(申请一块固定大小的内存区域),它有三种状态</p>
-<ul>
-<li> full: 完全分配</li>
-<li> partial: 部分分配</li>
-<li> empty: 未分配<br>需要 buffer 是,可以通过 new Buffer(size)得到指定内存大小<br>Node 以 8KB 分大小内存,Buffer.poolSize = 8 * 1024;<br>一个 slab 值为 8kb,以它作为单元分配内存</li>
-</ul>
-<ol>
-<li>分配小 Buffer 对象<br>若小于 8kb,Buffer 会使用一个局部变量 pool 作为中间处理对象,处于分配状态的 slab 单元都会指向它. 如下,以下新申请的 SlowBuffer 会指向一个全新的 slab 单元<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> pool;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">allocPool</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  pool = <span class="keyword">new</span> SlowBuffer(Buffer.poolSize);</span><br><span class="line">  pool.used = <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-如下为全新slab单元<br>|                                 | 8kb 的pool<br>used:0<br>此时 slab 状态为 empty<br>当 new Buffer(1024), 这次构造将检查pool对象,若没有,新建slab单元指向它,if (!pool || pool.length - pool.used &lt; this.length) allocPool(); 同时当前buffer对象的parent 属性指向slab, 并记录是从哪个位置（offset)开始使用，slab自身记录被使用了多少字节<br>存放进去之后slab 状态为partial<br>当再一次创建时判断剩余空间是否充足，够就存，不够，构造新的slab。 原来的slab空间浪费</li>
-<li>分配小 Buffer 对象<br>超过8kb buffer对象，直接分配一个SlowBuffer为slab单元</li>
-</ol>
-<h3 id="Buffer-的转换"><a href="#Buffer-的转换" class="headerlink" title="Buffer 的转换"></a>Buffer 的转换</h3><p>  buffer 对象可以与字符串相互转换，支持 ASCII,UTF-8,UTF-16LE/UCS-2,Base64,Binary,Hex</p>
-<ol>
-<li>字符串转buffer<br>主要通过构造函数完成<br>new Buffer(str, [encoding]);<br>存储的之内是一种编码类型，一个buffer对象可以存储不同编码类型的字符串转码的值，调用write()<br>buf.write(string,[offset],[length],[encoding])</li>
-<li>Buffer 转字符串<br>转换十分简单,如下<br>buf.toString([encoding],[start],[end])</li>
-<li>Buffer不支持的编码类型<br>Buffer.isEncoding(encoding)判断是否支持转换</li>
-</ol>
-
+                
             </div>
             <hr/>
 
@@ -504,7 +483,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://yoursite.com/2020/07/04/readme/">http://yoursite.com/2020/07/04/readme/</a>
+                    <a href="http://yoursite.com/2020/08/08/react/">http://yoursite.com/2020/08/08/react/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -707,9 +686,48 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;Previous</div>
+                <i class="far fa-dot-circle"></i>&nbsp;Current
+            </div>
+            <div class="card">
+                <a href="/2020/08/08/react/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/23.jpg" class="responsive-img" alt="react">
+                        
+                        <span class="card-title">react</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-08-08
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-user fa-fw"></i>
+                            John Doe
+                            
+                        </span>
+                    </div>
+                </div>
+
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                Next&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
             <div class="card">
                 <a href="/2020/08/07/test/">
                     <div class="card-image">
@@ -732,45 +750,8 @@ HyperTex
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2020-08-07
-                        </span>
-                        <span class="publish-author">
-                            
-                            <i class="fas fa-user fa-fw"></i>
-                            John Doe
-                            
-                        </span>
-                    </div>
-                </div>
-                
-            </div>
-        </div>
-        
-        
-        <div class="article col s12 m6" data-aos="fade-up">
-            <div class="article-badge right-badge text-color">
-                Next&nbsp;<i class="fas fa-chevron-right"></i>
-            </div>
-            <div class="card">
-                <a href="/2020/05/07/hello-world/">
-                    <div class="card-image">
-                        
-                        
-                        <img src="/medias/featureimages/12.jpg" class="responsive-img" alt="Hello World">
-                        
-                        <span class="card-title">Hello World</span>
-                    </div>
-                </a>
-                <div class="card-content article-content">
-                    <div class="summary block-with-text">
-                        
-                            Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hex
-                        
-                    </div>
-                    <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-05-07
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-08-07
                             </span>
                         <span class="publish-author">
                             
