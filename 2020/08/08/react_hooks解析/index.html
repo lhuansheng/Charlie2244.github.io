@@ -8,12 +8,12 @@
   <link rel="dns-prefetch" href="http://yoursite.com">
   <title>react hooks 神三元项目解析 | 一朝烟雨</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="吧啦吧啦&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; 自从弄懂了神三元大神的作品《云音悦》，整个人神清气爽，飘飘欲仙~，本着学习应该共同进步的精神，我将三元项目的一个页面流程进行了一个细致的讲解。是的，你没有听错，是流程。我相信有很多人拿到一个开源项目希望能够弄懂，但是一个项目肯定是很大的，不知从何下手，每个组件与每个组件之间有着千丝万缕的联系，于是，想想还是算了吧。 &amp;nbsp;&amp;nbsp">
+  <meta name="description" content="吧啦吧啦&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; 自从弄懂了神三元大神的作品《云音悦》，整个人神清气爽，飘飘欲仙~，本着学习应该共同进步的精神，我将三元项目的一个页面流程进行了一个细致的讲解。是的，你没有听错，是流程。我相信有很多人拿到一个开源项目希望能够弄懂，但是一个项目肯定是很大的，不知从何下手，每个组件与每个组件之间有着千丝万缕的联系，于是，想想还是算了吧。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="react hooks 神三元项目解析">
 <meta property="og:url" content="http://yoursite.com/2020/08/08/react_hooks%E8%A7%A3%E6%9E%90/index.html">
 <meta property="og:site_name" content="一朝烟雨">
-<meta property="og:description" content="吧啦吧啦&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; 自从弄懂了神三元大神的作品《云音悦》，整个人神清气爽，飘飘欲仙~，本着学习应该共同进步的精神，我将三元项目的一个页面流程进行了一个细致的讲解。是的，你没有听错，是流程。我相信有很多人拿到一个开源项目希望能够弄懂，但是一个项目肯定是很大的，不知从何下手，每个组件与每个组件之间有着千丝万缕的联系，于是，想想还是算了吧。 &amp;nbsp;&amp;nbsp">
+<meta property="og:description" content="吧啦吧啦&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; 自从弄懂了神三元大神的作品《云音悦》，整个人神清气爽，飘飘欲仙~，本着学习应该共同进步的精神，我将三元项目的一个页面流程进行了一个细致的讲解。是的，你没有听错，是流程。我相信有很多人拿到一个开源项目希望能够弄懂，但是一个项目肯定是很大的，不知从何下手，每个组件与每个组件之间有着千丝万缕的联系，于是，想想还是算了吧。">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://p9-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/bb214c8eefa047f6ac59cafad10b8428~tplv-k3u1fbpfcp-zoom-1.image">
 <meta property="og:image" content="https://p6-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/fe073fc746284b9889f0853fbce28886~tplv-k3u1fbpfcp-zoom-1.image">
@@ -26,7 +26,7 @@
 <meta property="og:image" content="https://p6-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/4d93a6d672cf4759aaee455f57e1c4f7~tplv-k3u1fbpfcp-zoom-1.image">
 <meta property="og:image" content="https://p6-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/93b70da5c77640c8b0eb118573a5628b~tplv-k3u1fbpfcp-zoom-1.image">
 <meta property="article:published_time" content="2020-08-08T02:17:55.000Z">
-<meta property="article:modified_time" content="2020-08-16T01:08:11.732Z">
+<meta property="article:modified_time" content="2020-08-16T01:40:58.876Z">
 <meta property="article:author" content="花生">
 <meta property="article:tag" content="react">
 <meta name="twitter:card" content="summary">
@@ -102,14 +102,6 @@
 					<a class="zhihu" target="_blank" href="#" title="zhihu"><i class="icon-zhihu"></i></a>
 		        
 			</div>
-		</nav>
-		<nav>
-			<!-- 网易云音乐插件 -->
-			
-				<div style="position:absolute; bottom:120px left:auto; width:85%">
-						<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="240" height="52" src="//music.163.com/outchain/player?type=2&id=1332647902&auto=1&height=32"></iframe>
-				</div>
-			
 		</nav>
 	</header>		
 </div>
@@ -195,8 +187,7 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p><img src="https://p9-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/bb214c8eefa047f6ac59cafad10b8428~tplv-k3u1fbpfcp-zoom-1.image" alt=""></p>
-<h2 id="吧啦吧啦"><a href="#吧啦吧啦" class="headerlink" title="吧啦吧啦"></a>吧啦吧啦</h2><p>&nbsp;&nbsp;&nbsp;&nbsp; 自从弄懂了神三元大神的作品《云音悦》，整个人神清气爽，飘飘欲仙~，本着学习应该共同进步的精神，我将三元项目的一个页面流程进行了一个细致的讲解。是的，你没有听错，是流程。我相信有很多人拿到一个开源项目希望能够弄懂，但是一个项目肯定是很大的，不知从何下手，每个组件与每个组件之间有着千丝万缕的联系，于是，想想还是算了吧。</p>
-<p>&nbsp;&nbsp;&nbsp;&nbsp; 在这里我将从零开始搭建这个项目，一步一步的将项目的真面目露出来，需要说明的是，我在这里仅仅只是对三元项目的代码进行了 cv大战(粘贴复制)，当然cv不是说每个文件一次性全部复制，而是有选择性的将流程能够走通。</p>
+<h2 id="吧啦吧啦"><a href="#吧啦吧啦" class="headerlink" title="吧啦吧啦"></a>吧啦吧啦</h2><p>&nbsp;&nbsp;&nbsp;&nbsp; 自从弄懂了神三元大神的作品《云音悦》，整个人神清气爽，飘飘欲仙~，本着学习应该共同进步的精神，我将三元项目的一个页面流程进行了一个细致的讲解。是的，你没有听错，是流程。我相信有很多人拿到一个开源项目希望能够弄懂，但是一个项目肯定是很大的，不知从何下手，每个组件与每个组件之间有着千丝万缕的联系，于是，想想还是算了吧。<br> <a id="more"></a><br>&nbsp;&nbsp;&nbsp;&nbsp; 在这里我将从零开始搭建这个项目，一步一步的将项目的真面目露出来，需要说明的是，我在这里仅仅只是对三元项目的代码进行了 cv大战(粘贴复制)，当然cv不是说每个文件一次性全部复制，而是有选择性的将流程能够走通。</p>
 <p>&nbsp;&nbsp;&nbsp;&nbsp; 如下图就是我们要完成的一个页面，其他的页面也是类似，完成这个页面其实能说明很多问题了，这个页面有从后端请求数据，有redux管理数据，有轮播图。。。 不多说了，进入正题吧!</p>
 <p><img src="https://p6-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/fe073fc746284b9889f0853fbce28886~tplv-k3u1fbpfcp-zoom-1.image" alt=""></p>
 <h2 id="技术栈"><a href="#技术栈" class="headerlink" title="技术栈"></a>技术栈</h2><ul>

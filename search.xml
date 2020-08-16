@@ -4,8 +4,7 @@
     <title>react hooks 神三元项目解析</title>
     <url>/home/2020/08/08/react_hooks%E8%A7%A3%E6%9E%90/</url>
     <content><![CDATA[<p><img src="https://p9-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/bb214c8eefa047f6ac59cafad10b8428~tplv-k3u1fbpfcp-zoom-1.image" alt=""></p>
-<h2 id="吧啦吧啦"><a href="#吧啦吧啦" class="headerlink" title="吧啦吧啦"></a>吧啦吧啦</h2><p>&nbsp;&nbsp;&nbsp;&nbsp; 自从弄懂了神三元大神的作品《云音悦》，整个人神清气爽，飘飘欲仙~，本着学习应该共同进步的精神，我将三元项目的一个页面流程进行了一个细致的讲解。是的，你没有听错，是流程。我相信有很多人拿到一个开源项目希望能够弄懂，但是一个项目肯定是很大的，不知从何下手，每个组件与每个组件之间有着千丝万缕的联系，于是，想想还是算了吧。</p>
-<p>&nbsp;&nbsp;&nbsp;&nbsp; 在这里我将从零开始搭建这个项目，一步一步的将项目的真面目露出来，需要说明的是，我在这里仅仅只是对三元项目的代码进行了 cv大战(粘贴复制)，当然cv不是说每个文件一次性全部复制，而是有选择性的将流程能够走通。</p>
+<h2 id="吧啦吧啦"><a href="#吧啦吧啦" class="headerlink" title="吧啦吧啦"></a>吧啦吧啦</h2><p>&nbsp;&nbsp;&nbsp;&nbsp; 自从弄懂了神三元大神的作品《云音悦》，整个人神清气爽，飘飘欲仙~，本着学习应该共同进步的精神，我将三元项目的一个页面流程进行了一个细致的讲解。是的，你没有听错，是流程。我相信有很多人拿到一个开源项目希望能够弄懂，但是一个项目肯定是很大的，不知从何下手，每个组件与每个组件之间有着千丝万缕的联系，于是，想想还是算了吧。<br> <a id="more"></a><br>&nbsp;&nbsp;&nbsp;&nbsp; 在这里我将从零开始搭建这个项目，一步一步的将项目的真面目露出来，需要说明的是，我在这里仅仅只是对三元项目的代码进行了 cv大战(粘贴复制)，当然cv不是说每个文件一次性全部复制，而是有选择性的将流程能够走通。</p>
 <p>&nbsp;&nbsp;&nbsp;&nbsp; 如下图就是我们要完成的一个页面，其他的页面也是类似，完成这个页面其实能说明很多问题了，这个页面有从后端请求数据，有redux管理数据，有轮播图。。。 不多说了，进入正题吧!</p>
 <p><img src="https://p6-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/fe073fc746284b9889f0853fbce28886~tplv-k3u1fbpfcp-zoom-1.image" alt=""></p>
 <h2 id="技术栈"><a href="#技术栈" class="headerlink" title="技术栈"></a>技术栈</h2><ul>
