@@ -1,0 +1,17 @@
+{
+  "extends": "airbnb",
+  "env":{
+    "browser": true
+  },
+  "rules":{
+      "max-len":[1,200],
+      "linebreak-style":0,
+      "no-console": "off",
+      "jsx-a11y/href-no-hash": "off",
+      "react/forbid-prop-types":"off",
+      "react/prefer-stateless-function":"off",
+      "class-methods-use-this": "off",
+      "no-return-assign": 0,
+      "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
+    }
+}
