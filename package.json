@@ -1,0 +1,24 @@
+{
+  "name": "Charlie2244.github.io",
+  "version": "1.0.0",
+  "description": "vuepress by blog",
+  "main": "index.js",
+  "scripts": {
+    "dev": "vuepress dev src",
+    "build": "vuepress build src",
+    "d": "bash deploy.sh"
+  },
+  "repository": "git+https://github.com/Charlie2244/Charlie2244.github.io.git",
+  "keywords": [],
+  "author": "Charlie2244",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Charlie2244/Charlie2244.github.io/issues"
+  },
+  "homepage": "https://github.com/Charlie2244/Charlie2244.github.io#readme",
+  "dependencies": {
+    "vuepress": "^1.4.1",
+    "vuepress-theme-melodydl": "^1.1.2"
+  },
+  "private": false
+}
