@@ -4,8 +4,8 @@
   "description": "vuepress by blog",
   "main": "index.js",
   "scripts": {
-    "dev": "vuepress dev src",
-    "build": "vuepress build src",
+    "dev": "vuepress dev docs",
+    "docs:build": "vuepress build docs",
     "d": "bash deploy.sh"
   },
   "repository": "git+https://github.com/Charlie2244/Charlie2244.github.io.git",
